@@ -70,3 +70,13 @@ Une partie du retour console de la requête SQL effectuée :
 
 ## Exo 6 commands :
 
+(Je rencontre une erreur dans la récupération du fichier de base de données, voici l'erreur :
+{"error":"database \"//workingfirstsqlimage/docker-entrypoint-initdb.d/db\" does not exist"})
+
+- docker network create -d bridge nodenetwork
+
+- docker build -t nodeapi .
+- docker run -d -p 3000:3000 --network=nodenetwork nodeapi
+
+- docker build . -t firstsqlimage
+- docker run -d --rm -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres --name workingfirstsqlimage --network=nodenetwork firstsqlimage
