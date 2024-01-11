@@ -1,38 +1,46 @@
-Exo 1 commands : 
+## ==> Exo 1 commands : 
 
 - docker pull docsseo91/stardocker:v1
 
-Exo 2 commands :
+## ==> Exo 2 commands :
+
+(Lignes de commandes modifiés avec username en fonction de l'erreur rencontré dans l'exo 3 concernant le manque de droits de gestion)
 
 - docker build -t 25032047/firstbasicwebsite .
+
 - docker run -d -p 80:80 25032047/firstbasicwebsite
 
 
-Exo 3 commands :
+## ==> Exo 3 commands :
 
-- docker login ... (je donne pas mes logs :)
+- docker login ... 
+(Je devais faire cette ligne pour me connecter et pouvoir push l'image)
+
 - docker image push 25032047/firstbasicwebsite
-(je suis obligé de mettre le username devant l'image sinon je ne peut pas push, je sais pas pourquoi, j'ai modifié les lignes de l'exo 2 enc conséquence)
+(Je suis obligé de mettre le username devant l'image sinon je ne peut pas push faute de droits, je ne connais pas la raison, j'ai modifié les lignes de commande de l'exo 2 en conséquence)
 
 
-Exo 4 commands :
+## ==> Exo 4 commands :
 
 - docker build -t firstnodewebsite .
+
 - docker run -d -p 3000:3000 firstnodewebsite
 
 
-Exo 5 commands :
+## ==> Exo 5 commands :
 
-docker build . -t firstsqlimage
-docker run -d --rm -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres --name workingfirstsqlimage firstsqlimage
+- docker build . -t firstsqlimage
 
-docker exec -it workingfirstsqlimage sh
-psql -h localhost -U postgres
+- docker run -d --rm -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres --name workingfirstsqlimage firstsqlimage
 
-postgres=# SELECT nom from personnes where age > 30;
+- docker exec -it workingfirstsqlimage sh
 
-    nom
------------
+- psql -h localhost -U postgres
+
+- postgres=# SELECT nom from personnes where age > 30;
+
+------
+Une partie du retour console de la requête SQL effectuée :
  Charlie
  Erik
  Fanny
@@ -57,4 +65,8 @@ postgres=# SELECT nom from personnes where age > 30;
  ... (plus d'info mais max taille terminal)
 
 
- Exo 6 commands :
+------
+
+
+## Exo 6 commands :
+
